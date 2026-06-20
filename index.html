@@ -5,201 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Утилиты для ПК & Скрипты Оптимизации | CyberMaster</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 550px;
-            width: 90%;
-            margin: 15px auto;
-            background: #1e293b;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            border: 1px solid #334155;
-        }
-
-        .avatar {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #06b6d4, #3b82f6);
-            border-radius: 50%;
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
-        }
-
-        h1 {
-            margin: 0 0 5px 0;
-            font-size: 24px;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .subtitle {
-            color: #06b6d4;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .section-title {
-            font-size: 16px;
-            color: #ffffff;
-            text-align: left;
-            margin: 15px 0 10px 0;
-            padding-left: 10px;
-            border-left: 3px solid #06b6d4;
-        }
-
-        .services {
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        .service-link {
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .service-card {
-            background: #0f172a;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #1e293b;
-            transition: all 0.2s ease;
-        }
-
-        .service-link:hover .service-card {
-            transform: translateY(-2px);
-            border-color: #06b6d4;
-            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.15);
-        }
-
-        .service-card h3 {
-            margin: 0 0 4px 0;
-            color: #f1f5f9;
-            font-size: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price-tag {
-            background: rgba(6, 182, 212, 0.2);
-            color: #22d3ee;
-            padding: 3px 8px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: bold;
-        }
-
-        .service-card p {
-            margin: 0;
-            color: #94a3b8;
-            font-size: 12px;
-            line-height: 1.4;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #06b6d4, #3b82f6);
-            color: white;
-            padding: 11px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
-            margin-top: 5px;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
-            filter: brightness(1.1);
-        }
-
-        footer {
-            margin-top: 15px;
-            font-size: 10px;
-            color: #64748b;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { max-width: 550px; width: 90%; margin: 15px auto; background: #1e293b; padding: 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); text-align: center; border: 1px solid #334155; }
+        .avatar { width: 70px; height: 70px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 0 25px rgba(6, 182, 212, 0.4); }
+        h1 { margin: 0 0 5px 0; font-size: 24px; color: #ffffff; letter-spacing: 0.5px; }
+        .subtitle { color: #06b6d4; font-size: 13px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .section-title { font-size: 16px; color: #ffffff; text-align: left; margin: 15px 0 10px 0; padding-left: 10px; border-left: 3px solid #06b6d4; }
+        .services { text-align: left; margin-bottom: 15px; }
+        .service-card { background: #0f172a; padding: 15px; border-radius: 10px; border: 1px solid #1e293b; margin-bottom: 15px; transition: all 0.2s ease; }
+        .service-card:hover { border-color: #06b6d4; box-shadow: 0 5px 15px rgba(6, 182, 212, 0.15); }
+        .service-card h3 { margin: 0 0 10px 0; color: #f1f5f9; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .price-tag { background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 3px 8px; border-radius: 20px; font-size: 12px; font-weight: bold; white-space: nowrap; }
+        .service-card p { margin: 0 0 12px 0; color: #94a3b8; font-size: 12px; line-height: 1.4; min-height: 50px; }
+        .switcher-container { display: flex; background: #1e293b; padding: 3px; border-radius: 6px; margin-bottom: 12px; border: 1px solid #334155; }
+        .switch-btn { flex: 1; background: transparent; border: none; color: #94a3b8; padding: 6px; font-size: 11px; font-weight: bold; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: all 0.2s ease; }
+        .switch-btn.active { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #ffffff; }
+        .card-buy-btn { display: block; background: #1e293b; color: #22d3ee; text-align: center; text-decoration: none; padding: 8px; border-radius: 6px; font-size: 12px; font-weight: bold; border: 1px solid #06b6d4; transition: all 0.2s ease; }
+        .card-buy-btn:hover { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #ffffff; box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); }
+        .btn { display: inline-block; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: white; padding: 11px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); margin-top: 5px; }
+        footer { margin-top: 15px; font-size: 10px; color: #64748b; }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="avatar">🛠️</div>
-        
         <h1>CyberMaster PC</h1>
         <div class="subtitle">Магазин утилит, автоматизации и скриптов</div>
-        
         <p style="color: #cbd5e1; margin-bottom: 15px; font-size: 13px; line-height: 1.5;">
-            Ускоряйте систему и автоматизируйте рутину мгновенно. Специализированный софт, скрипты и пакеты твиков от CyberMaster с автоматической доставкой в Telegram.
+            Ускоряйте систему и автоматизируйте рутину мгновенно. Специализированный софт от CyberMaster.
         </p>
-
         <div class="section-title">Каталог цифровых товаров</div>
-
         <div class="services">
-            <a href="https://t.me/ТВОЙ_БОТ_ОПЛАТЫ_bot" class="service-link" target="_blank">
-                <div class="service-card">
-                    <h3>🚀 Фирменная утилита очистки Windows <span class="price-tag">199 грн</span></h3>
-                    <p>Эксклюзивный софт. В один клик стирает системный мусор, заблокированный кэш и ускоряет отклик ПК. Полностью на понятном языке.</p>
+            <div class="service-card" id="card-cleanup">
+                <h3>🚀 <span class="title-text">Фирменная утилита очистки Windows</span> <span class="price-tag">199 грн</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('cleanup', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('cleanup', 'pro')">PRO (Полная)</button>
                 </div>
-            </a>
-
-            <a href="https://t.me/ТВОЙ_БОТ_ОПЛАТЫ_bot" class="service-link" target="_blank">
-                <div class="service-card">
-                    <h3>🛡️ Супер-скрипт: Отключение телеметрии <span class="price-tag">299 грн</span></h3>
-                    <p>Полная приватность. Безопасно отключает скрытые службы слежки Microsoft, сбор фоновой диагностики и навязчивую рекламу Windows.</p>
+                <p class="desc-text">Автоматическая очистка системы от временных файлов и логов. Кнопка «Очистить» освобождает место на диске. PRO-версия удаляет даже скрытый «мусор», повышая стабильность.</p>
+                <a href="ССЫЛКА_DONATELLO_PRO_CLEANUP" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+            </div>
+            <div class="service-card" id="card-telemetry">
+                <h3>🛡️ <span class="title-text">Супер-скрипт: Отключение телеметрии</span> <span class="price-tag">299 грн</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('telemetry', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('telemetry', 'pro')">PRO (Полная)</button>
                 </div>
-            </a>
-
-            <a href="https://t.me/ТВОЙ_БОТ_ОПЛАТЫ_bot" class="service-link" target="_blank">
-                <div class="service-card">
-                    <h3>💻 Мастер Автозагрузки: Чистка фонового софта <span class="price-tag">349 грн</span></h3>
-                    <p>Ускорение включения ПК до 2-х раз. Скрипт находит и вычищает скрытые программы, агенты и апдейтеры из глубоких веток реестра.</p>
+                <p class="desc-text">Отключает слежку Microsoft и фоновую диагностику. Кнопка «Активировать» блокирует трекинг, кнопка «Восстановить» мгновенно возвращает заводские настройки приватности.</p>
+                <a href="ССЫЛКА_DONATELLO_PRO_TELEMETRY" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+            </div>
+            <div class="service-card" id="card-startup">
+                <h3>💻 <span class="title-text">Мастер Автозагрузки</span> <span class="price-tag">349 грн</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('startup', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('startup', 'pro')">PRO (Полная)</button>
                 </div>
-            </a>
-
-            <a href="https://t.me/ТВОЙ_БОТ_ОПЛАТЫ_bot" class="service-link" target="_blank">
-                <div class="service-card">
-                    <h3>🎮 Ультимативный твик-пакет разгона Windows <span class="price-tag">399 грн</span></h3>
-                    <p>Максимальный FPS в играх. Набор безопасных настроек реестра, оптимизация работы процессора и разблокировка скрытых режимов питания.</p>
+                <p class="desc-text">Умный менеджер автозагрузки. «Сканировать систему» находит скрытые апдейтеры, ярлыки и битые записи (мусор) в реестре. «Удалить выбранное» отключает их с бэкапом в текстовом файле backup, а «Восстановить удаленное» возвращает всё назад. Доступен поиск процессов в Интернете и добавление своих программ.</p>
+                <a href="ССЫЛКА_DONATELLO_PRO_STARTUP" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+            </div>
+            <div class="service-card" id="card-tweak">
+                <h3>🎮 <span class="title-text">Ультимативный твик-пакет</span> <span class="price-tag">399 грн</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('tweak', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('tweak', 'pro')">PRO (Полная)</button>
                 </div>
-            </a>
-            
-            <a href="https://t.me/ТВОЙ_БОТ_ОПЛАТЫ_bot" class="service-link" target="_blank">
-                <div class="service-card">
-                    <h3>📦 Пакет лучшего софта «Всё включено» <span class="price-tag">149 грн</span></h3>
-                    <p>Безопасные проверенные утилиты для лечения от вирусов и исправления критических ошибок Windows + понятные инструкции.</p>
+                <p class="desc-text">Выжмите максимум из вашего железа! Активируйте режим Игровой для стабильного FPS в играх и устранения микрофризов. Режим Стандартный мгновенно вернет систему к сбалансированным офисным настройкам без перезагрузки.</p>
+                <a href="ССЫЛКА_DONATELLO_PRO_TWEAK" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+            </div>
+            <div class="service-card" id="card-software">
+                <h3>📦 <span class="title-text">Пакет софта «Всё включено»</span> <span class="price-tag">149 грн</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('software', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('software', 'pro')">PRO (Полная)</button>
                 </div>
-            </a>
+                <p class="desc-text">Библиотека проверенных утилит. Включает автоматические скрипты для диагностики железа и исправления системных ошибок. Инструкция прилагается.</p>
+                <a href="ССЫЛКА_DONATELLO_PRO_SOFTWARE" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+            </div>
         </div>
-
-        <a href="https://t.me/RuslanPC99?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%83%D1%8E%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F." class="btn" target="_blank">Получить бесплатную консультацию</a>
-        
+        <a href="https://t.me/RuslanPC99?text=Привет! Я хочу получить бесплатную консультацию." class="btn" target="_blank">Получить бесплатную консультацию</a>
         <footer>© 2026 Магазин скриптов CyberMaster. Все права защищены.</footer>
     </div>
-
+    <script>
+        const products = {
+            cleanup: {
+                lite: { price: "10 грн", desc: "Облегченная Light-версия. Безопасно очищает кэш DNS и историю проводника для базового ускорения.", link: "ССЫЛКА_DONATELLO_LITE_CLEANUP" },
+                pro: { price: "199 грн", desc: "Автоматическая очистка системы от временных файлов и логов. Кнопка «Очистить» освобождает место на диске. PRO-версия удаляет даже скрытый «мусор», повышая стабильность.", link: "ССЫЛКА_DONATELLO_PRO_CLEANUP" }
+            },
+            telemetry: {
+                lite: { price: "20 грн", desc: "Базовый скрипт для ознакомления с функционалом отключения служб слежки.", link: "ССЫЛКА_DONATELLO_LITE_TELEMETRY" },
+                pro: { price: "299 грн", desc: "Отключает слежку Microsoft и фоновую диагностику. Кнопка «Активировать» блокирует трекинг, кнопка «Восстановить» мгновенно возвращает заводские настройки приватности.", link: "ССЫЛКА_DONATELLO_PRO_TELEMETRY" }
+            },
+            startup: {
+                lite: { price: "20 грн", desc: "Сканирует реестр и отключает самый очевидный фоновый мусор.", link: "ССЫЛКА_DONATELLO_LITE_STARTUP" },
+                pro: { price: "349 грн", desc: "Умный менеджер автозагрузки. «Сканировать систему» находит скрытые апдейтеры, ярлыки и битые записи (мусор) в реестре. «Удалить выбранное» отключает их с бэкапом в текстовом файле backup, а «Восстановить удаленное» возвращает всё назад. Доступен поиск процессов в Интернете и добавление своих программ.", link: "ССЫЛКА_DONATELLO_PRO_STARTUP" }
+            },
+            tweak: {
+                lite: { price: "20 грн", desc: "Оптимизирует сетевые параметры и стек протоколов для базовой стабилизации пинга.", link: "ССЫЛКА_DONATELLO_LITE_TWEAK" },
+                pro: { price: "399 грн", desc: "Выжмите максимум из вашего железа! Активируйте режим Игровой для стабильного FPS в играх и устранения микрофризов. Режим Стандартный мгновенно вернет систему к сбалансированным офисным настройкам без перезагрузки.", link: "ССЫЛКА_DONATELLO_PRO_TWEAK" }
+            },
+            software: {
+                lite: { price: "20 грн", desc: "Автоматическая, чистая установка утилит для диагностики накопителей и памяти.", link: "ССЫЛКА_DONATELLO_LITE_SOFTWARE" },
+                pro: { price: "149 грн", desc: "Библиотека проверенных утилит. Включает автоматические скрипты для диагностики железа и исправления системных ошибок. Инструкция прилагается.", link: "ССЫЛКА_DONATELLO_PRO_SOFTWARE" }
+            }
+        };
+        function toggleVersion(productId, version) {
+            const card = document.getElementById(`card-${productId}`);
+            const data = products[productId][version];
+            const buttons = card.querySelectorAll('.switch-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            const clickedBtn = version === 'lite' ? buttons[0] : buttons[1];
+            clickedBtn.classList.add('active');
+            card.querySelector('.price-tag').innerText = data.price;
+            card.querySelector('.desc-text').innerText = data.desc;
+            const buyBtn = card.querySelector('.card-buy-btn');
+            buyBtn.setAttribute('href', data.link);
+            buyBtn.innerText = "Купить через G Pay / Карту";
+        }
+    </script>
 </body>
 </html>
