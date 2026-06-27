@@ -15,8 +15,9 @@
         .service-card { background: #0f172a; padding: 15px; border-radius: 10px; border: 1px solid #1e293b; margin-bottom: 15px; transition: all 0.2s ease; }
         .service-card:hover { border-color: #06b6d4; box-shadow: 0 5px 15px rgba(6, 182, 212, 0.15); }
         .service-card h3 { margin: 0 0 10px 0; color: #f1f5f9; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .icon-img { width: 24px; height: 24px; vertical-align: middle; }
         .price-tag { background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 3px 8px; border-radius: 20px; font-size: 12px; font-weight: bold; white-space: nowrap; }
-        .service-card p { margin: 0 0 12px 0; color: #94a3b8; font-size: 12px; line-height: 1.4; min-height: 50px; }
+        .service-card p { margin: 0 0 12px 0; color: #94a3b8; font-size: 12px; line-height: 1.4; min-height: 40px; }
         .switcher-container { display: flex; background: #1e293b; padding: 3px; border-radius: 6px; margin-bottom: 12px; border: 1px solid #334155; }
         .switch-btn { flex: 1; background: transparent; border: none; color: #94a3b8; padding: 6px; font-size: 11px; font-weight: bold; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: all 0.2s ease; }
         .switch-btn.active { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #ffffff; }
@@ -24,8 +25,6 @@
         .card-buy-btn:hover { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #ffffff; box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); }
         .btn { display: inline-block; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: white; padding: 11px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); margin-top: 5px; }
         footer { margin-top: 15px; font-size: 10px; color: #64748b; }
-        
-        /* Стили для блока гарантии безопасности */
         .security-badge { background: rgba(15, 23, 42, 0.5); border: 1px dashed #334155; border-radius: 10px; padding: 12px; margin-bottom: 15px; text-align: center; }
         .security-badge p { color: #94a3b8; font-size: 11px; margin: 0 0 8px 0; line-height: 1.4; }
         .security-badge p span { color: #06b6d4; font-weight: bold; }
@@ -37,103 +36,79 @@
         <div class="avatar">🛠️</div>
         <h1>CyberMaster PC</h1>
         <div class="subtitle">Магазин утилит, автоматизации и скриптов</div>
-        <p style="color: #cbd5e1; margin-bottom: 15px; font-size: 13px; line-height: 1.5;">
-            Ускоряйте систему и автоматизируйте рутину мгновенно. Специализированный софт от CyberMaster.
-        </p>
         <div class="section-title">Каталог цифровых товаров</div>
         <div class="services">
             <div class="service-card" id="card-cleanup">
-                <h3>🚀 <span class="title-text">Фирменная утилита очистки Windows</span> <span class="price-tag">199 грн</span></h3>
+                <h3><span><img src="output_photos/cleaning.ico" class="icon-img"> Фирменная очистка</span> <span class="price-tag">$4.99</span></h3>
                 <div class="switcher-container">
                     <button class="switch-btn" onclick="toggleVersion('cleanup', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('cleanup', 'pro')">PRO (Полная)</button>
+                    <button class="switch-btn active" onclick="toggleVersion('cleanup', 'pro')">PRO</button>
                 </div>
-                <p class="desc-text">Автоматическая очистка системы от временных файлов и логов. Кнопка «Очистить» освобождает место на диске. PRO-версия удаляет даже скрытый «мусор», повышая стабильность.</p>
-                <a href="https://donatello.to/CyberMasterPC" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
-            </div>
-            <div class="service-card" id="card-telemetry">
-                <h3>🛡️ <span class="title-text">Супер-скрипт: Отключение телеметрии</span> <span class="price-tag">299 грн</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('telemetry', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('telemetry', 'pro')">PRO (Полная)</button>
-                </div>
-                <p class="desc-text">Отключает слежку Microsoft и фоновую диагностику. Кнопка «Активировать» блокирует трекинг, кнопка «Восстановить» мгновенно возвращает заводские настройки приватности.</p>
-                <a href="https://donatello.to/CyberMasterPC" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
-            </div>
-            <div class="service-card" id="card-startup">
-                <h3>💻 <span class="title-text">Мастер Автозагрузки</span> <span class="price-tag">349 грн</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('startup', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('startup', 'pro')">PRO (Полная)</button>
-                </div>
-                <p class="desc-text">Умный менеджер автозагрузки. «Сканировать систему» находит скрытые апдейтеры, ярлыки и битые записи (мусор) в реестре. «Удалить выбранное» отключает их с бэкапом в текстовом файле backup, а «Восстановить удаленное» возвращает всё назад. Доступен поиск процессов в Интернете и добавление своих программ.</p>
-                <a href="https://donatello.to/CyberMasterPC" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
-            </div>
-            <div class="service-card" id="card-tweak">
-                <h3>🎮 <span class="title-text">Ультимативный твик-пакет</span> <span class="price-tag">399 грн</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('tweak', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('tweak', 'pro')">PRO (Полная)</button>
-                </div>
-                <p class="desc-text">Выжмите максимум из вашего железа! Активируйте режим Игровой для стабильного FPS в играх и устранения микрофризов. Режим Стандартный мгновенно вернет систему к сбалансированным офисным настройкам без перезагрузки.</p>
-                <a href="https://donatello.to/CyberMasterPC" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+                <p>Автоматическая очистка системы от мусора и временных файлов.</p>
+                <a href="https://payhip.com/b/6Kp18" class="card-buy-btn" target="_blank">Купить</a>
             </div>
             <div class="service-card" id="card-software">
-                <h3>📦 <span class="title-text">Пакет софта «Всё включено»</span> <span class="price-tag">149 грн</span></h3>
+                <h3><span><img src="output_photos/toolbox.ico" class="icon-img"> Пакет софта</span> <span class="price-tag">$3.99</span></h3>
                 <div class="switcher-container">
                     <button class="switch-btn" onclick="toggleVersion('software', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('software', 'pro')">PRO (Полная)</button>
+                    <button class="switch-btn active" onclick="toggleVersion('software', 'pro')">PRO</button>
                 </div>
-                <p class="desc-text">Библиотека проверенных утилит. Включает автоматические скрипты для диагностики железа и исправления системных ошибок. Инструкция прилагается.</p>
-                <a href="https://donatello.to/CyberMasterPC" class="card-buy-btn" target="_blank">Купить через G Pay / Карту</a>
+                <p>Библиотека проверенных утилит для диагностики железа.</p>
+                <a href="https://payhip.com/b/vfZoe" class="card-buy-btn" target="_blank">Купить</a>
+            </div>
+            <div class="service-card" id="card-startup">
+                <h3><span><img src="output_photos/startup.ico" class="icon-img"> Мастер Автозагрузки</span> <span class="price-tag">$8.99</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('startup', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('startup', 'pro')">PRO</button>
+                </div>
+                <p>Умный менеджер автозагрузки с бэкапом реестра.</p>
+                <a href="https://payhip.com/b/16tDS" class="card-buy-btn" target="_blank">Купить</a>
+            </div>
+            <div class="service-card" id="card-telemetry">
+                <h3><span><img src="output_photos/secure-data.ico" class="icon-img"> Отключение телеметрии</span> <span class="price-tag">$7.49</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('telemetry', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('telemetry', 'pro')">PRO</button>
+                </div>
+                <p>Отключает слежку Microsoft и фоновую диагностику.</p>
+                <a href="https://payhip.com/b/tqY9Z" class="card-buy-btn" target="_blank">Купить</a>
+            </div>
+            <div class="service-card" id="card-tweak">
+                <h3><span><img src="output_photos/rocket-launch.ico" class="icon-img"> Ультимативный твик-пакет</span> <span class="price-tag">$9.99</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggleVersion('tweak', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggleVersion('tweak', 'pro')">PRO</button>
+                </div>
+                <p>Игровой режим для стабильного FPS и устранения фризов.</p>
+                <a href="https://payhip.com/b/jkWbt" class="card-buy-btn" target="_blank">Купить</a>
             </div>
         </div>
 
         <div class="security-badge">
-            <p>🔒 <span>Гарантия безопасности.</span> Платежи проходят через защищенный шлюз. Мы не получаем и не храним данные ваших карт.</p>
-            <div class="payment-icons">
-                💳 Visa • Mastercard • G Pay • Apple Pay
-            </div>
+            <p>🔒 <span>Гарантированная безопасность.</span></p>
+            <div class="payment-icons">💳 PayPal • Visa • Mastercard • G Pay</div>
         </div>
-
-        <a href="https://t.me/RuslanPC99?text=Привет! Я хочу получить бесплатную консультацию." class="btn" target="_blank">Получить бесплатную консультацию</a>
-        <footer>© 2026 Магазин скриптов CyberMaster. Все права защищены.</footer>
+        <a href="https://t.me/RuslanPC99" class="btn" target="_blank">Бесплатная консультация</a>
+        <footer>© 2026 CyberMaster PC. Все права защищены.</footer>
     </div>
+
     <script>
         const products = {
-            cleanup: {
-                lite: { price: "20 грн", desc: "Облегченная Light-версия. Безопасно очищает кэш DNS и историю проводника для базового ускорения.", link: "https://donatello.to/CyberMasterPC" },
-                pro: { price: "199 грн", desc: "Автоматическая очистка системы от временных файлов и логов. Кнопка «Очистить» освобождает место на диске. PRO-версия удаляет даже скрытый «мусор», повышая стабильность.", link: "https://donatello.to/CyberMasterPC" }
-            },
-            telemetry: {
-                lite: { price: "20 грн", desc: "Базовый скрипт для ознакомления с функционалом отключения служб слежки.", link: "https://donatello.to/CyberMasterPC" },
-                pro: { price: "299 грн", desc: "Отключает слежку Microsoft и фоновую диагностику. Кнопка «Активировать» блокирует трекинг, кнопка «Восстановить» мгновенно возвращает заводские настройки приватности.", link: "https://donatello.to/CyberMasterPC" }
-            },
-            startup: {
-                lite: { price: "20 грн", desc: "Сканирует реестр и отключает самый очевидный фоновый мусор.", link: "https://donatello.to/CyberMasterPC" },
-                pro: { price: "349 грн", desc: "Умный менеджер автозагрузки. «Сканировать систему» находит скрытые апдейтеры, ярлыки и битые записи (мусор) в реестре. «Удалить выбранное» отключает их с бэкапом в текстовом файле backup, а «Восстановить удаленное» возвращает всё назад. Доступен поиск процессов в Интернете и добавление своих программ.", link: "https://donatello.to/CyberMasterPC" }
-            },
-            tweak: {
-                lite: { price: "20 грн", desc: "Оптимизирует сетевые параметры и стек протоколов для базовой стабилизации пинга.", link: "https://donatello.to/CyberMasterPC" },
-                pro: { price: "399 грн", desc: "Выжмите максимум из вашего железа! Активируйте режим Игровой для стабильного FPS в играх и устранения микрофризов. Режим Стандартный мгновенно вернет систему к сбалансированным офисным настройкам без перезагрузки.", link: "https://donatello.to/CyberMasterPC" }
-            },
-            software: {
-                lite: { price: "20 грн", desc: "Автоматическая, чистая установка утилит для диагностики накопителей и памяти.", link: "https://donatello.to/CyberMasterPC" },
-                pro: { price: "149 грн", desc: "Библиотека проверенных утилит. Включает автоматические скрипты для диагностики железа и исправления системных ошибок. Инструкция прилагается.", link: "https://donatello.to/CyberMasterPC" }
-            }
+            cleanup: { lite: { price: "$0.99", link: "https://payhip.com/b/wchDo" }, pro: { price: "$4.99", link: "https://payhip.com/b/6Kp18" } },
+            software: { lite: { price: "$0.99", link: "https://payhip.com/b/EhYux" }, pro: { price: "$3.99", link: "https://payhip.com/b/vfZoe" } },
+            startup: { lite: { price: "$0.99", link: "https://payhip.com/b/8irsL" }, pro: { price: "$8.99", link: "https://payhip.com/b/16tDS" } },
+            telemetry: { lite: { price: "$0.99", link: "https://payhip.com/b/UEQXa" }, pro: { price: "$7.49", link: "https://payhip.com/b/tqY9Z" } },
+            tweak: { lite: { price: "$0.99", link: "https://payhip.com/b/7NsZ9" }, pro: { price: "$9.99", link: "https://payhip.com/b/jkWbt" } }
         };
         function toggleVersion(productId, version) {
             const card = document.getElementById(`card-${productId}`);
             const data = products[productId][version];
             const buttons = card.querySelectorAll('.switch-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            const clickedBtn = version === 'lite' ? buttons[0] : buttons[1];
-            clickedBtn.classList.add('active');
+            (version === 'lite' ? buttons[0] : buttons[1]).classList.add('active');
             card.querySelector('.price-tag').innerText = data.price;
-            card.querySelector('.desc-text').innerText = data.desc;
-            const buyBtn = card.querySelector('.card-buy-btn');
-            buyBtn.setAttribute('href', data.link);
-            buyBtn.innerText = "Купить через G Pay / Карту";
+            card.querySelector('.card-buy-btn').setAttribute('href', data.link);
         }
     </script>
 </body>
