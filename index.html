@@ -4,111 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberMaster Store | Программы для очистки и оптимизации Windows</title>
-    <meta name="description" content="Магазин утилит CyberMaster: эффективные скрипты и программы для автоматической очистки, ускорения, оптимизации Windows и отключения телеметрии. Повысьте производительность вашего ПК.">
-    <meta name="keywords" content="утилиты для Windows, очистка ПК, оптимизация Windows, ускорение компьютера, отключение телеметрии, скрипты автоматизации, CyberMaster">
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
         .container { max-width: 550px; width: 90%; margin: 15px auto; background: #1e293b; padding: 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); text-align: center; border: 1px solid #334155; }
         .avatar { width: 70px; height: 70px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 0 25px rgba(6, 182, 212, 0.4); }
-        h1 { margin: 0 0 5px 0; font-size: 24px; color: #ffffff; letter-spacing: 0.5px; }
-        .subtitle { color: #06b6d4; font-size: 13px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
-        .section-title { font-size: 16px; color: #ffffff; text-align: left; margin: 15px 0 10px 0; padding-left: 10px; border-left: 3px solid #06b6d4; }
-        .services { text-align: left; margin-bottom: 15px; }
-        .service-card { background: #0f172a; padding: 15px; border-radius: 10px; border: 1px solid #1e293b; margin-bottom: 15px; transition: all 0.2s ease; }
-        .service-card:hover { border-color: #06b6d4; box-shadow: 0 5px 15px rgba(6, 182, 212, 0.15); }
-        .service-card h3 { margin: 0 0 10px 0; color: #f1f5f9; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        h1 { margin: 0 0 5px 0; font-size: 24px; color: #ffffff; }
+        .subtitle { color: #06b6d4; font-size: 13px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
+        .service-card { background: #0f172a; padding: 15px; border-radius: 10px; border: 1px solid #1e293b; margin-bottom: 15px; text-align: left; }
+        .service-card h3 { margin: 0 0 10px 0; color: #f1f5f9; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
         .icon-img { width: 24px; height: 24px; vertical-align: middle; }
-        .price-tag { background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 3px 8px; border-radius: 20px; font-size: 12px; font-weight: bold; white-space: nowrap; }
-        .service-card p { margin: 0 0 12px 0; color: #94a3b8; font-size: 12px; line-height: 1.4; min-height: 40px; }
+        .price-tag { background: rgba(6, 182, 212, 0.2); color: #22d3ee; padding: 3px 8px; border-radius: 20px; font-size: 12px; font-weight: bold; }
         .switcher-container { display: flex; background: #1e293b; padding: 3px; border-radius: 6px; margin-bottom: 12px; border: 1px solid #334155; }
-        .switch-btn { flex: 1; background: transparent; border: none; color: #94a3b8; padding: 6px; font-size: 11px; font-weight: bold; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: all 0.2s ease; }
+        .switch-btn { flex: 1; background: transparent; border: none; color: #94a3b8; padding: 6px; font-size: 11px; font-weight: bold; cursor: pointer; border-radius: 4px; }
         .switch-btn.active { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #ffffff; }
-        .card-buy-btn { display: block; background: #1e293b; color: #22d3ee; text-align: center; text-decoration: none; padding: 8px; border-radius: 6px; font-size: 12px; font-weight: bold; border: 1px solid #06b6d4; transition: all 0.2s ease; }
-        .card-buy-btn:hover { background: linear-gradient(135deg, #06b6d4, #3b82f6); color: #ffffff; box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); }
-        .btn { display: inline-block; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: white; padding: 11px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); margin-top: 5px; }
+        .buy-buttons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; }
+        .card-buy-btn { background: #1e293b; color: #ffffff; text-align: center; text-decoration: none; padding: 8px 2px; border-radius: 6px; font-size: 10px; font-weight: bold; border: 1px solid #334155; transition: 0.2s; }
+        .card-buy-btn:hover { border-color: #06b6d4; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #06b6d4, #3b82f6); color: white; padding: 11px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: 5px; }
         footer { margin-top: 15px; font-size: 10px; color: #64748b; }
-        .security-badge { background: rgba(15, 23, 42, 0.5); border: 1px dashed #334155; border-radius: 10px; padding: 12px; margin-bottom: 15px; text-align: center; }
-        .security-badge p { color: #94a3b8; font-size: 11px; margin: 0 0 8px 0; line-height: 1.4; }
-        .security-badge p span { color: #06b6d4; font-weight: bold; }
-        .payment-icons { color: #cbd5e1; font-size: 14px; font-weight: bold; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="avatar">🛠️</div>
-        <h1>CyberMaster: Программы для очистки и оптимизации Windows</h1>
-        <div class="subtitle">Скачать программы для чистки ПК, ускорения и настройки Windows</div>
-        <div class="section-title">Программы для ускорения и очистки компьютера</div>
-        <div class="services">
-            <div class="service-card" id="card-cleanup">
-                <h3><span><img src="output_photos/cleaning.ico" class="icon-img"> Фирменная очистка</span> <span class="price-tag">$4.99</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('cleanup', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('cleanup', 'pro')">PRO</button>
-                </div>
-                <p>Программа для автоматической очистки Windows от мусора, удаления кэша и ускорения ПК.</p>
-                <a href="https://payhip.com/b/hVr2U" class="card-buy-btn" target="_blank">Купить</a>
-            </div>
-            <div class="service-card" id="card-software">
-                <h3><span><img src="output_photos/toolbox.ico" class="icon-img"> Пакет софта для ПК</span> <span class="price-tag">$3.99</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('software', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('software', 'pro')">PRO</button>
-                </div>
-                <p>Набор полезных программ для диагностики железа, исправления ошибок и тестов системы.</p>
-                <a href="https://payhip.com/b/vfZoe" class="card-buy-btn" target="_blank">Купить</a>
-            </div>
-            <div class="service-card" id="card-startup">
-                <h3><span><img src="output_photos/startup.ico" class="icon-img"> Мастер Автозагрузки</span> <span class="price-tag">$8.99</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('startup', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('startup', 'pro')">PRO</button>
-                </div>
-                <p>Программа управления автозагрузкой для ускорения запуска Windows и чистки реестра.</p>
-                <a href="https://payhip.com/b/16tDS" class="card-buy-btn" target="_blank">Купить</a>
-            </div>
-            <div class="service-card" id="card-telemetry">
-                <h3><span><img src="output_photos/secure-data.ico" class="icon-img"> Отключение телеметрии</span> <span class="price-tag">$7.49</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('telemetry', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('telemetry', 'pro')">PRO</button>
-                </div>
-                <p>Программа для отключения слежки Windows, удаления телеметрии и скрытых фоновых задач.</p>
-                <a href="https://payhip.com/b/tqY9Z" class="card-buy-btn" target="_blank">Купить</a>
-            </div>
-            <div class="service-card" id="card-tweak">
-                <h3><span><img src="output_photos/rocket-launch.ico" class="icon-img"> Твики для ускорения ПК</span> <span class="price-tag">$9.99</span></h3>
-                <div class="switcher-container">
-                    <button class="switch-btn" onclick="toggleVersion('tweak', 'lite')">Lite</button>
-                    <button class="switch-btn active" onclick="toggleVersion('tweak', 'pro')">PRO</button>
-                </div>
-                <p>Программа для оптимизации системы под игры, повышения FPS и устранения микрофризов.</p>
-                <a href="https://payhip.com/b/jkWbt" class="card-buy-btn" target="_blank">Купить</a>
-            </div>
-        </div>
-        <div class="security-badge">
-            <p>🔒 <span>Гарантированная безопасность.</span></p>
-            <div class="payment-icons">💳 PayPal • Visa • Mastercard • G Pay</div>
-        </div>
+        <h1>CyberMaster: Windows Optimizer</h1>
+        <div class="subtitle">Магазин утилит для очистки и настройки</div>
+        
+        <div id="services-list"></div>
+
         <a href="https://t.me/RuslanPC99" class="btn" target="_blank">Бесплатная консультация</a>
         <footer>© 2026 CyberMaster PC. Все права защищены.</footer>
     </div>
+
     <script>
         const products = {
-            cleanup: { lite: { price: "$0.99", link: "https://payhip.com/b/wchDo" }, pro: { price: "$4.99", link: "https://payhip.com/b/6Kp18" } },
-            software: { lite: { price: "$0.99", link: "https://payhip.com/b/EhYux" }, pro: { price: "$3.99", link: "https://payhip.com/b/vfZoe" } },
-            startup: { lite: { price: "$0.99", link: "https://payhip.com/b/8irsL" }, pro: { price: "$8.99", link: "https://payhip.com/b/16tDS" } },
-            telemetry: { lite: { price: "$0.99", link: "https://payhip.com/b/UEQXa" }, pro: { price: "$7.49", link: "https://payhip.com/b/tqY9Z" } },
-            tweak: { lite: { price: "$0.99", link: "https://payhip.com/b/7NsZ9" }, pro: { price: "$9.99", link: "https://payhip.com/b/jkWbt" } }
+            cleanup: { name: "Фирменная очистка", icon: "cleaning.ico", lite: { price: "$0.99", gum: "https://cybermaven5.gumroad.com/l/dqolswy", kofi: "https://ko-fi.com/s/5a71e0b83b", pay: "https://payhip.com/b/wchDo" }, pro: { price: "$4.99", gum: "https://cybermaven5.gumroad.com/l/dmfept", kofi: "https://ko-fi.com/s/3fc6428088", pay: "https://payhip.com/b/hVr2U" } },
+            software: { name: "Пакет софта", icon: "toolbox.ico", lite: { price: "$0.99", gum: "https://cybermaven5.gumroad.com/l/ukyiw", kofi: "https://ko-fi.com/s/50ffce7f7f", pay: "https://payhip.com/b/EhYux" }, pro: { price: "$3.99", gum: "https://cybermaven5.gumroad.com/l/ldrjo", kofi: "https://ko-fi.com/s/058e12f8f0", pay: "https://payhip.com/b/vfZoe" } },
+            startup: { name: "Мастер Автозагрузки", icon: "startup.ico", lite: { price: "$0.99", gum: "https://cybermaven5.gumroad.com/l/rvzbjw", kofi: "https://ko-fi.com/s/b0b5dbe368", pay: "https://payhip.com/b/8irsL" }, pro: { price: "$8.99", gum: "https://cybermaven5.gumroad.com/l/zrmjgp", kofi: "https://ko-fi.com/s/1f82c69a5b", pay: "https://payhip.com/b/16tDS" } },
+            telemetry: { name: "Отключение телеметрии", icon: "secure-data.ico", lite: { price: "$0.99", gum: "https://cybermaven5.gumroad.com/l/ifoxt", kofi: "https://ko-fi.com/s/3f51f11159", pay: "https://payhip.com/b/UEQXa" }, pro: { price: "$7.49", gum: "https://cybermaven5.gumroad.com/l/sqheet", kofi: "https://ko-fi.com/s/9c36cc05e6", pay: "https://payhip.com/b/tqY9Z" } },
+            tweak: { name: "Твики для ускорения", icon: "rocket-launch.ico", lite: { price: "$0.99", gum: "https://cybermaven5.gumroad.com/l/oruic", kofi: "https://ko-fi.com/s/238b256917", pay: "https://payhip.com/b/7NsZ9" }, pro: { price: "$9.99", gum: "https://cybermaven5.gumroad.com/l/upsjpc", kofi: "https://ko-fi.com/s/a8f4849b59", pay: "https://payhip.com/b/jKwbt" } }
         };
-        function toggleVersion(productId, version) {
-            const card = document.getElementById(`card-${productId}`);
-            const data = products[productId][version];
-            const buttons = card.querySelectorAll('.switch-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            (version === 'lite' ? buttons[0] : buttons[1]).classList.add('active');
-            card.querySelector('.price-tag').innerText = data.price;
-            card.querySelector('.card-buy-btn').setAttribute('href', data.link);
+
+        const container = document.getElementById('services-list');
+        for (let key in products) {
+            const p = products[key];
+            container.innerHTML += `
+            <div class="service-card" id="card-${key}">
+                <h3><span><img src="output_photos/${p.icon}" class="icon-img"> ${p.name}</span> <span class="price-tag">${p.pro.price}</span></h3>
+                <div class="switcher-container">
+                    <button class="switch-btn" onclick="toggle('${key}', 'lite')">Lite</button>
+                    <button class="switch-btn active" onclick="toggle('${key}', 'pro')">PRO</button>
+                </div>
+                <div class="buy-buttons">
+                    <a href="${p.pro.gum}" class="card-buy-btn gum" target="_blank">Gumroad</a>
+                    <a href="${p.pro.kofi}" class="card-buy-btn kofi" target="_blank">Ko-fi</a>
+                    <a href="${p.pro.pay}" class="card-buy-btn pay" target="_blank">Payhip</a>
+                </div>
+            </div>`;
+        }
+
+        function toggle(id, ver) {
+            const p = products[id][ver];
+            const card = document.getElementById('card-' + id);
+            card.querySelector('.price-tag').innerText = p.price;
+            card.querySelector('.gum').href = p.gum;
+            card.querySelector('.kofi').href = p.kofi;
+            card.querySelector('.pay').href = p.pay;
+            card.querySelectorAll('.switch-btn').forEach(b => b.classList.toggle('active', b.innerText.toLowerCase() === ver));
         }
     </script>
 </body>
