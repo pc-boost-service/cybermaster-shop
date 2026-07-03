@@ -9,7 +9,7 @@ Convenience: We automate routine tasks that used to take hours.
 
 Our Products
 You can purchase our utilities and optimization packages via our official store:
-👉 Visit our store
+👉 [Visit our store](https://pc-boost-service.github.io/cybermaster-shop/)
 
 You will find:
 
@@ -21,7 +21,7 @@ System acceleration tweak sets.
 
 Need help or consultation?
 If you have questions about the scripts or need custom configuration:
-👉 Contact the author on Telegram
+👉 [Contact the author on Telegram](https://t.me/RuslanPC99)
 
 © 2026 CyberMaster PC. All rights reserved.
 
