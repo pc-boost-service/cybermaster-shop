@@ -1,3 +1,30 @@
+Welcome to the official repository of the CyberMaster project. We create professional tools for cleaning, optimizing, and configuring Windows to help your computer run at its full potential.
+
+Why choose CyberMaster?
+Efficiency: Our scripts remove only junk files without harming the system.
+
+Safety: Proven solutions for disabling telemetry and optimizing startup items.
+
+Convenience: We automate routine tasks that used to take hours.
+
+Our Products
+You can purchase our utilities and optimization packages via our official store:
+👉 Visit our store
+
+You will find:
+
+Signature Windows cleaning packages.
+
+Startup management tools.
+
+System acceleration tweak sets.
+
+Need help or consultation?
+If you have questions about the scripts or need custom configuration:
+👉 Contact the author on Telegram
+
+© 2026 CyberMaster PC. All rights reserved.
+
 # CyberMaster: Windows Optimizer 🛠️
 
 Добро пожаловать в официальный репозиторий проекта **CyberMaster**. Мы создаем профессиональные инструменты для очистки, оптимизации и настройки Windows, чтобы ваш компьютер работал на пределе своих возможностей.
